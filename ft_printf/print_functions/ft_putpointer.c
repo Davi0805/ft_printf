@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putpointer.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: davi <davi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: dmelo-ca <dmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 14:38:06 by davi              #+#    #+#             */
-/*   Updated: 2024/04/27 20:57:58 by davi             ###   ########.fr       */
+/*   Updated: 2024/04/28 16:17:04 by dmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../Libft/libft.h"
 #include "libftprintf.h"
-#include <stdio.h>
 
 int	digitos(unsigned long n)
 {
@@ -68,7 +68,6 @@ int	putpointer(void *ptr)
 {
 	char			*res;
 	unsigned long	endereco;
-	int				i;
 	int				nsize;
 
 	endereco = (unsigned long)ptr;

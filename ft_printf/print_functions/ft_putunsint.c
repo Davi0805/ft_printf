@@ -6,11 +6,12 @@
 /*   By: dmelo-ca <dmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 17:46:24 by dmelo-ca          #+#    #+#             */
-/*   Updated: 2024/04/26 17:46:29 by dmelo-ca         ###   ########.fr       */
+/*   Updated: 2024/04/28 16:14:45 by dmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../Libft/libft.h"
+#include "libftprintf.h"
 
 int	ft_putunsint(int n)
 {
