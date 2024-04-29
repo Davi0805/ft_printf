@@ -30,25 +30,45 @@ int	countargc(const char *format)
 	return (contador);
 }
 
+int	percputstr(const char *format)
+{
+	int	i;
+
+	i = 0;
+	while (format[i] || format[i] != '%')
+	{
+		write(1, &format[i], 1);
+		i++;
+	}
+	return (i);
+}
+
 int	ft_printf(const char *format, ...)
 {
 	int argc;
 	int	check;
+	va_list ap;
+	int	numchar = 0;
+	int i = 0;
 
 	argc = countargc(format);
 	if (argc == 0)
 	{
-		ft_putstr(format);
+		numchar = ft_putstr(format);
 		return (0);
 	}
-	va_list ap;
-
-	va_start(ap, argc);
-	
-
+	va_start(ap, format);
+	i = percputstr(format) + 1;
+		check = va_arg(ap, int);
+		numchar += ft_putchar(check);
+	va_end(ap);
+	return (numchar);
 }
 
 int	main(void)
 {
-	ft_printf("Ola, eu sou Davi. Tenho 20 anos!");
+	char teste;
+
+	teste = 'D';
+	ft_printf("Ola, eu sou Davi. Tenho 20 anos!", teste);
 }

@@ -6,14 +6,14 @@
 /*   By: dmelo-ca <dmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 14:38:06 by davi              #+#    #+#             */
-/*   Updated: 2024/04/28 16:17:04 by dmelo-ca         ###   ########.fr       */
+/*   Updated: 2024/04/29 14:44:10 by dmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Libft/libft.h"
 #include "libftprintf.h"
 
-int	digitos(unsigned long n)
+int	digitosp(unsigned long n)
 {
 	int	nsize;
 
@@ -25,7 +25,7 @@ int	digitos(unsigned long n)
 	return (nsize);
 }
 
-char	*inttohex(unsigned long n, int nsize)
+char	*inttohexp(unsigned long n, int nsize)
 {
 	char	*res;
 	int		tempn;
@@ -64,15 +64,15 @@ int	ft_reverseputstr(char *str, int nsize)
 	return (i);
 }
 
-int	putpointer(void *ptr)
+int	ft_putpointer(void *ptr)
 {
 	char			*res;
 	unsigned long	endereco;
 	int				nsize;
 
 	endereco = (unsigned long)ptr;
-	nsize = digitos(endereco);
-	res = inttohex(endereco, nsize);
+	nsize = digitosp(endereco);
+	res = inttohexp(endereco, nsize);
 	nsize = nsize + 1;
 	ft_reverseputstr(res, nsize);
 	free(res);
