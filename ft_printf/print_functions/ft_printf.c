@@ -2,73 +2,74 @@
 #include "../Libft/libft.h"
 #include "libftprintf.h"
 
-int	countargc(const char *format)
-{
-	char *flags;
-	int	i;
-	int j;
-	int contador;
-
-	i = 0;
-	contador = 0;
-	flags = "cspdiuxX%";
-	while (format[i])
-	{
-		j = 0;
-		if (format[i] == '%')
-			while (flags[j])
-			{
-				if (format[i + 1] == flags[j])
-				{
-					contador++;
-					break;
-				}
-				j++;
-			}
-		i++;
-	}
-	return (contador);
-}
-
-int	percputstr(const char *format)
+int	flagchecker(char *flags, char c)
 {
 	int	i;
 
 	i = 0;
-	while (format[i] || format[i] != '%')
+	while (flags[i] != '\0')
 	{
-		write(1, &format[i], 1);
+		if (flags[i] == c)
+			return (1);
 		i++;
 	}
-	return (i);
+	return (0);
 }
-
+int	printputstr(va_list ap, const char *format, int i)
+{
+	if (format[i + 1] == 'c')
+		return (ft_putchar(va_arg(ap, int)));
+	else if (format[i + 1] == 's')
+		return (ft_putstr(va_arg(ap, char *)));
+	else if (format[i + 1] == 'p')
+		return (ft_putpointer(va_arg(ap, void *)));
+	else if (format[i + 1] == 'd')
+		return (ft_putint(va_arg(ap, int)));
+	else if (format[i + 1] == 'i')
+		return (ft_putint(va_arg(ap, int)));
+	else if (format[i + 1] == 'u')
+		return (ft_putunsint(va_arg(ap, unsigned int)));
+	else if (format[i + 1] == 'x')
+		return (ft_puthexlowcase(va_arg(ap, unsigned int)));
+	else if (format[i + 1] == 'X')
+		return (ft_puthexupcase(va_arg(ap, unsigned int)));
+	else if (format[i + 1] == '%')
+		return (ft_putpercent());
+	else
+		return (0);
+}
 int	ft_printf(const char *format, ...)
 {
-	int argc;
-	int	check;
 	va_list ap;
-	int	numchar = 0;
-	int i = 0;
+	int	numchar;
+	int i;
 
-	argc = countargc(format);
-	if (argc == 0)
-	{
-		numchar = ft_putstr(format);
-		return (0);
-	}
 	va_start(ap, format);
-	i = percputstr(format) + 1;
-		check = va_arg(ap, int);
-		numchar += ft_putchar(check);
+	while(format[i])
+	{
+		if (format[i] == '%' && flagchecker("cspdiuxX%", format[i + 1]) == 1)
+		{
+			numchar += printputstr(ap, format, i);
+			i++;
+		}
+		else
+			numchar += ft_putchar(format[i]);
+		i++;
+	}
 	va_end(ap);
 	return (numchar);
 }
 
 int	main(void)
 {
-	char teste;
+	char letra;
+	char *nome = (char *)malloc(sizeof(char) * 5);
+	int	idade;
+	int ano;
 
-	teste = 'D';
-	ft_printf("Ola, eu sou Davi. Tenho 20 anos!", teste);
+	nome = "Davi";
+	idade = 20;
+	ano = 2004;
+	letra = 'D';
+	ft_printf("Ola, eu sou %s. Tenho %i anos. A primeira letra do meu nome e %c. O endereco do meu nome e %p. O ano do meu nascimento em hexadecimal e (%x|%X)", nome, idade, letra, nome, ano, ano);
 }

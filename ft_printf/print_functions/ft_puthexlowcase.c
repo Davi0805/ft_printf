@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_puthexlowcase.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmelo-ca <dmelo-ca@student.42.fr>          +#+  +:+       +#+        */
+/*   By: davi <davi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 15:26:26 by dmelo-ca          #+#    #+#             */
-/*   Updated: 2024/04/29 14:44:33 by dmelo-ca         ###   ########.fr       */
+/*   Updated: 2024/04/30 09:22:00 by davi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	*inttohexl(int n, int nsize)
 		if (tempn < 10)
 			res[i++] = tempn + '0';
 		else
-			res[i++] = tempn + 88;
+			res[i++] = tempn + 87;
 		n /= 16;
 	}
 	res[i] = '\0';
