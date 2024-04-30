@@ -6,7 +6,7 @@
 /*   By: davi <davi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 15:26:26 by dmelo-ca          #+#    #+#             */
-/*   Updated: 2024/04/30 09:22:00 by davi             ###   ########.fr       */
+/*   Updated: 2024/04/30 10:09:36 by davi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,14 @@ char	*inttohexl(int n, int nsize)
 		if (tempn < 10)
 			res[i++] = tempn + '0';
 		else
-			res[i++] = tempn + 87;
+			res[i++] = tempn + 55;
 		n /= 16;
 	}
 	res[i] = '\0';
 	return (res);
 }
 
-int	ft_puthexlowcase(int n)
+int	ft_puthexlowcase(unsigned int n)
 {
 	char	*res;
 	int		nsize;

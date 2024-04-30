@@ -1,6 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: davi <davi@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/30 10:17:34 by davi              #+#    #+#             */
+/*   Updated: 2024/04/30 10:19:32 by davi             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdarg.h>
 #include "../Libft/libft.h"
 #include "libftprintf.h"
+#include <stdio.h>
 
 int	flagchecker(char *flags, char c)
 {
@@ -15,6 +28,7 @@ int	flagchecker(char *flags, char c)
 	}
 	return (0);
 }
+
 int	printputstr(va_list ap, const char *format, int i)
 {
 	if (format[i + 1] == 'c')
@@ -38,6 +52,7 @@ int	printputstr(va_list ap, const char *format, int i)
 	else
 		return (0);
 }
+
 int	ft_printf(const char *format, ...)
 {
 	va_list ap;
@@ -60,16 +75,21 @@ int	ft_printf(const char *format, ...)
 	return (numchar);
 }
 
-int	main(void)
-{
-	char letra;
-	char *nome = (char *)malloc(sizeof(char) * 5);
-	int	idade;
-	int ano;
+// int	main(void)
+// {
+// 	char letra;
+// 	char *nome = (char *)malloc(sizeof(char) * 5);
+// 	int	idade;
+// 	int ano;
 
-	nome = "Davi";
-	idade = 20;
-	ano = 2004;
-	letra = 'D';
-	ft_printf("Ola, eu sou %s. Tenho %i anos. A primeira letra do meu nome e %c. O endereco do meu nome e %p. O ano do meu nascimento em hexadecimal e (%x|%X)", nome, idade, letra, nome, ano, ano);
-}
+// 	nome = "Davi";
+// 	idade = 20;
+// 	ano = 2004;
+// 	letra = 'D';
+// 	//ft_putpointer(nome);
+// 	//printf("%p", nome);
+// 	ft_printf("Ola, eu sou %s. Tenho %i anos. A primeira letra do meu nome e %c. O endereco do meu nome e %p. O ano do meu nascimento em hexadecimal e %x ou %X.\n", nome, idade, letra, nome, ano, ano);
+// 	printf("Ola, eu sou %s. Tenho %i anos. A primeira letra do meu nome e %c. O endereco do meu nome e %p. O ano do meu nascimento em hexadecimal e (%x|%X)\n", nome, idade, letra, nome, ano, ano);
+
+// 	return 0;
+// }

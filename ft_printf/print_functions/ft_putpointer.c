@@ -6,77 +6,34 @@
 /*   By: davi <davi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 14:38:06 by davi              #+#    #+#             */
-/*   Updated: 2024/04/30 09:29:12 by davi             ###   ########.fr       */
+/*   Updated: 2024/04/30 10:00:09 by davi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Libft/libft.h"
 #include "libftprintf.h"
 
-int	digitosp(unsigned long n)
-{
-	int	nsize;
-
-	while (n != 0)
-	{
-		n /= 16;
-		nsize++;
+int ft_putpointer(void *ptr) {
+	unsigned long address = (unsigned long)ptr;
+	char buffer[20];
+	int numchar;
+	int i = 0;
+	while (address > 0) {
+		int digit = address % 16;
+		if (digit < 10) {
+			buffer[i] = digit + '0';
+		} else {
+			buffer[i] = digit - 10 + 'a';
+		}
+		address /= 16;
+		i++;
 	}
-	return (nsize);
-}
-
-char	*inttohexp(unsigned long n, int nsize)
-{
-	char	*res;
-	int		tempn;
-	int		i;
-
-	i = 0;
-	res = (char *)malloc((nsize + 3) * sizeof(char));
-	if (res == NULL)
-		return (NULL);
-	while (n != 0)
-	{
-		tempn = n % 16;
-		if (tempn < 10)
-			res[i++] = tempn + '0';
-		else
-			res[i++] = tempn + 55;
-		n /= 16;
+	numchar = i + 2;
+	write(1, "0x", 2);
+	for (int j = i - 1; j >= 0; j--) {
+		write(1, &buffer[j], 1);
 	}
-	res[i++] = 'x';
-	res[i++] = 'O';
-	res[i] = '\0';
-	return (res);
-}
-
-int	ft_reverseputstr(char *str, int nsize)
-{
-	int	i;
-
-	i = nsize;
-	while (str[i])
-	{
-		write(1, &str[i], 1);
-		i--;
-	}
-	i = nsize;
-	return (i);
-}
-
-int	ft_putpointer(void *ptr)
-{
-	char			*res;
-	unsigned long	endereco;
-	int				nsize;
-
-	endereco = (unsigned long)ptr;
-	nsize = digitosp(endereco);
-	res = inttohexp(endereco, nsize);
-	nsize = nsize + 1;
-	ft_reverseputstr(res, nsize);
-	free(res);
-	return (nsize);
+	return (numchar);
 }
 
 // int	main(void)
