@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_puthexupcase.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: davi <davi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: dmelo-ca <dmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 15:26:26 by dmelo-ca          #+#    #+#             */
-/*   Updated: 2024/04/30 10:06:41 by davi             ###   ########.fr       */
+/*   Updated: 2024/04/30 16:11:42 by dmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	digitos(int n)
 {
 	int	nsize;
 
+	nsize = 0;
 	while (n != 0)
 	{
 		n /= 16;
@@ -72,9 +73,9 @@ int	ft_puthexupcase(unsigned int n)
 	return (nsize);
 }
 
-/*int	main(void)
-{
-	int	n = 64531;
+// int	main(void)
+// {
+// 	int	n = 64531;
 
-	ft_puthexupcase(n);
-}*/
+// 	ft_puthexupcase(n);
+// }

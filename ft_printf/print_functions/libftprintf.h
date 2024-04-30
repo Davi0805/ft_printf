@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libftprintf.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: davi <davi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: dmelo-ca <dmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 14:51:56 by davi              #+#    #+#             */
-/*   Updated: 2024/04/30 10:18:45 by davi             ###   ########.fr       */
+/*   Updated: 2024/04/30 14:15:55 by dmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ int	ft_putpercent(void);
 int	ft_putstr(const char *str);
 int	ft_putunsint(int n);
 int	ft_putpointer(void *ptr);
-int	ft_printf(const char *format, ...);
+//int	ft_printf(const char *format, ...);
 
 #endif

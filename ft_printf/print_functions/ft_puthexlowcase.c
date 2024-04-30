@@ -3,20 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_puthexlowcase.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: davi <davi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: dmelo-ca <dmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 15:26:26 by dmelo-ca          #+#    #+#             */
-/*   Updated: 2024/04/30 10:09:36 by davi             ###   ########.fr       */
+/*   Updated: 2024/04/30 16:11:02 by dmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Libft/libft.h"
 #include "libftprintf.h"
+#include <stdio.h>
 
 int	digitosl(int n)
 {
+
 	int	nsize;
 
+	nsize = 0;
 	while (n != 0)
 	{
 		n /= 16;
@@ -41,7 +44,7 @@ char	*inttohexl(int n, int nsize)
 		if (tempn < 10)
 			res[i++] = tempn + '0';
 		else
-			res[i++] = tempn + 55;
+			res[i++] = tempn + 87;
 		n /= 16;
 	}
 	res[i] = '\0';
@@ -50,25 +53,25 @@ char	*inttohexl(int n, int nsize)
 
 int	ft_puthexlowcase(unsigned int n)
 {
-	char	*res;
+	char	*result;
 	int		nsize;
 	int		i;
 	int		len;
 	char	tempchar;
 
 	nsize = digitosl(n);
-	res = inttohexl(n, nsize);
+	result = inttohexl(n, nsize);
 	len = nsize;
 	i = 0;
 	while (i < len / 2)
 	{
-		tempchar = res[i];
-		res[i] = res[len - i - 1];
-		res[len - i - 1] = tempchar;
+		tempchar = result[i];
+		result[i] = result[len - i - 1];
+		result[len - i - 1] = tempchar;
 		i++;
 	}
-	ft_putstr(res);
-	free(res);
+	ft_putstr(result);
+	free(result);
 	return (nsize);
 }
 
