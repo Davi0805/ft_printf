@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: davi <davi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/26 17:45:13 by dmelo-ca          #+#    #+#             */
-/*   Updated: 2024/05/01 10:48:06 by davi             ###   ########.fr       */
+/*   Created: 2024/04/19 13:16:58 by davi              #+#    #+#             */
+/*   Updated: 2024/04/21 17:37:19 by dmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./Libft/libft.h"
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_putstr(const char *str)
+void	ft_putendl_fd(char *s, int fd)
 {
-	int	i;
-
-	i = 0;
-	if (str == NULL)
-		return (0);
-	while (str[i])
-	{
-		write(1, &str[i], 1);
-		i++;
-	}
-	return (i);
+	write(fd, s, ft_strlen(s));
+	write(fd, "\n", 1);
 }
+
+/*
+int main()
+{
+	char str[] = "O rato roeu a roupa do rei de roma";
+
+	ft_putendl_fd(str, open("putendlteste.txt", O_RDWR | O_CREAT));
+
+	return 0;
+}
+*/

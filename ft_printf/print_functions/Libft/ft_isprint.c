@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: davi <davi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/26 17:45:13 by dmelo-ca          #+#    #+#             */
-/*   Updated: 2024/05/01 10:48:06 by davi             ###   ########.fr       */
+/*   Created: 2024/04/19 13:15:35 by davi              #+#    #+#             */
+/*   Updated: 2024/04/21 17:43:41 by dmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./Libft/libft.h"
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_putstr(const char *str)
+int	ft_isprint(int c)
 {
-	int	i;
-
-	i = 0;
-	if (str == NULL)
-		return (0);
-	while (str[i])
+	if ((c >= 32 && c <= 126))
 	{
-		write(1, &str[i], 1);
-		i++;
+		return (1);
 	}
-	return (i);
+	return (0);
 }

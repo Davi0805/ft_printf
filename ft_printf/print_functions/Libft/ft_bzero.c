@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: davi <davi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: dmelo-ca <dmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/26 17:45:13 by dmelo-ca          #+#    #+#             */
-/*   Updated: 2024/05/01 10:48:06 by davi             ###   ########.fr       */
+/*   Created: 2024/04/10 15:51:46 by dmelo-ca          #+#    #+#             */
+/*   Updated: 2024/04/22 13:51:07 by dmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./Libft/libft.h"
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_putstr(const char *str)
+void	ft_bzero(void *s, size_t n)
 {
-	int	i;
+	char	*p;
 
-	i = 0;
-	if (str == NULL)
-		return (0);
-	while (str[i])
+	p = (char *)s;
+	while (n > 0)
 	{
-		write(1, &str[i], 1);
-		i++;
+		*p = 0;
+		p++;
+		n--;
 	}
-	return (i);
 }

@@ -1,19 +1,24 @@
 NAME = libftprintf.a
-CC = gcc
-INCLUDE = libftprintf.h
+CC = cc
+LIBFTNAME = libft.a
+LIBFTDIR = ./Libft
 FLAGS = -Wall -Wextra -Werror
-AR = ar rc
+AR = ar
 
 SRCS = ft_putchar.c ft_putint.c ft_putstr.c ft_putpercent.c ft_puthexupcase.c \
-		ft_putpointer.c ft_putunsint.c ft_puthexlowcase.c \
+		ft_putpointer.c ft_putunsint.c ft_puthexlowcase.c ft_printf.c \
 
 OBJ = $(SRCS:%.c=%.o)
 
 all: $(NAME)
 
-$(NAME): $(SRCS)
-	$(CC)  $(FLAGS) -c $(SRCS)
-	$(AR)  $(NAME) $(OBJ)
+makelibft:
+		make -C $(LIBFTDIR)
+		cp $(LIBFTDIR)/$(LIBFTNAME) .
+		mv $(LIBFTNAME) $(NAME)
+
+$(NAME): makelibft $(OBJ)
+		$(AR) -r $(NAME) $(OBJ)
 
 clean:
 	rm -f *.o

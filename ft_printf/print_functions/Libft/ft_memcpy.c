@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: davi <davi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/26 17:45:13 by dmelo-ca          #+#    #+#             */
-/*   Updated: 2024/05/01 10:48:06 by davi             ###   ########.fr       */
+/*   Created: 2024/04/19 13:15:46 by davi              #+#    #+#             */
+/*   Updated: 2024/04/23 12:34:32 by davi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./Libft/libft.h"
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_putstr(const char *str)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	int	i;
+	unsigned char	*p;
+	unsigned char	*c;
 
-	i = 0;
-	if (str == NULL)
+	p = (unsigned char *)dest;
+	c = (unsigned char *)src;
+	if (!dest && !src)
 		return (0);
-	while (str[i])
+	while (n > 0)
 	{
-		write(1, &str[i], 1);
-		i++;
+		*p = *c;
+		p++;
+		c++;
+		n--;
 	}
-	return (i);
+	return (dest);
 }

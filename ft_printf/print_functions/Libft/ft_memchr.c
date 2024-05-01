@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmelo-ca <dmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 14:51:56 by davi              #+#    #+#             */
-/*   Updated: 2024/04/30 14:15:55 by dmelo-ca         ###   ########.fr       */
+/*   Created: 2024/04/22 13:25:50 by dmelo-ca          #+#    #+#             */
+/*   Updated: 2024/04/23 14:53:25 by dmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#include "libft.h"
 
-#include "../Libft/libft.h"
-# include <unistd.h>
-# include <stdlib.h>
+void	*ft_memchr(const void *s, int c, size_t n)
+{
+	size_t			i;
+	unsigned char	*resultado;
 
-int	ft_putchar(char c);
-int	ft_puthexupcase(unsigned int n);
-int	ft_puthexlowcase(unsigned int n);
-int	ft_putint(int n);
-int	ft_putpercent(void);
-int	ft_putstr(const char *str);
-int	ft_putunsint(int n);
-int	ft_putpointer(void *ptr);
-//int	ft_printf(const char *format, ...);
-
-#endif
+	i = 0;
+	resultado = (unsigned char *)s;
+	while (i < n)
+	{
+		if (resultado[i] == (unsigned char)c)
+			return (&resultado[i]);
+		i++;
+	}
+	return (NULL);
+}

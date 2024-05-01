@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_puthexupcase.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmelo-ca <dmelo-ca@student.42.fr>          +#+  +:+       +#+        */
+/*   By: davi <davi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 15:26:26 by dmelo-ca          #+#    #+#             */
-/*   Updated: 2024/04/30 16:11:42 by dmelo-ca         ###   ########.fr       */
+/*   Updated: 2024/05/01 10:47:47 by davi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Libft/libft.h"
-#include "libftprintf.h"
+#include "./Libft/libft.h"
+#include "ft_printf.h"
 
 int	digitos(int n)
 {

@@ -6,12 +6,12 @@
 /*   By: davi <davi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 14:38:06 by davi              #+#    #+#             */
-/*   Updated: 2024/04/30 10:00:09 by davi             ###   ########.fr       */
+/*   Updated: 2024/05/01 10:48:01 by davi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Libft/libft.h"
-#include "libftprintf.h"
+#include "./Libft/libft.h"
+#include "ft_printf.h"
 
 int ft_putpointer(void *ptr) {
 	unsigned long address = (unsigned long)ptr;

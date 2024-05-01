@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putpercent.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmelo-ca <dmelo-ca@student.42.fr>          +#+  +:+       +#+        */
+/*   By: davi <davi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 17:46:10 by dmelo-ca          #+#    #+#             */
-/*   Updated: 2024/04/28 16:17:22 by dmelo-ca         ###   ########.fr       */
+/*   Updated: 2024/05/01 10:47:56 by davi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Libft/libft.h"
-#include "libftprintf.h"
+#include "./Libft/libft.h"
+#include "ft_printf.h"
 
 int	ft_putpercent(void)
 {
