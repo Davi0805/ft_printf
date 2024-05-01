@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: davi <davi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 14:51:56 by davi              #+#    #+#             */
-/*   Updated: 2024/05/01 10:42:46 by davi             ###   ########.fr       */
+/*   Updated: 2024/05/01 14:43:38 by davi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_puthexlowcase(unsigned int n);
 int	ft_putint(int n);
 int	ft_putpercent(void);
 int	ft_putstr(const char *str);
-int	ft_putunsint(int n);
+int	ft_putunsint(unsigned int n);
 int	ft_putpointer(void *ptr);
 int	ft_printf(const char *format, ...);
 
