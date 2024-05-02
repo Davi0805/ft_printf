@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: davi <davi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: dmelo-ca <dmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 10:17:34 by davi              #+#    #+#             */
-/*   Updated: 2024/05/01 15:27:49 by davi             ###   ########.fr       */
+/*   Updated: 2024/05/02 12:12:41 by dmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,13 +54,13 @@ int	printputstr(va_list ap, const char *format, int i)
 
 int	ft_printf(const char *format, ...)
 {
-	va_list ap;
-	int	numchar;
-	int i;
+	va_list	ap;
+	int		numchar;
+	int		i;
 
 	i = 0;
 	va_start(ap, format);
-	while(format[i])
+	while (format[i])
 	{
 		if (format[i] == '%' && flagchecker("cspdiuxX%", format[i + 1]) == 1)
 		{
@@ -91,8 +91,8 @@ int	ft_printf(const char *format, ...)
 // 	letra = 'D';
 // //ft_putpointer(nome);
 // //ft_printf("%X", ano);
-// 	ft_printf("Eu sou %s.\nTenho %i anos.\nA primeira letra do meu nome e %c.\nO endereco do meu nome e %p.\nO ano do meu nascimento em hexadecimal e (%x|%X).\nQuando existir duas porcentagens seguidas deve printar %%\n", nome, idade, letra, nome, ano, ano);
-// 	printf("Ola, eu sou %s. Tenho %i anos. A primeira letra do meu nome e %c. O endereco do meu nome e %p. O ano do meu nascimento em hexadecimal e (%x|%X)\n", nome, idade, letra, nome, ano, ano);
+// 	ft_printf("Eu sou %s.", nome);
+// 	printf("Eu sou %s.", nome)
 
 // 	return 0;
 // }*/

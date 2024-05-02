@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_puthexupcase.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: davi <davi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: dmelo-ca <dmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 15:26:26 by dmelo-ca          #+#    #+#             */
-/*   Updated: 2024/05/01 15:24:17 by davi             ###   ########.fr       */
+/*   Updated: 2024/05/02 12:52:58 by dmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./Libft/libft.h"
 #include "ft_printf.h"
 
-int	digitos(int n)
+int	digitos(unsigned long n)
 {
 	int	nsize;
 
@@ -26,7 +26,7 @@ int	digitos(int n)
 	return (nsize);
 }
 
-char	*inttohex(int n, int nsize)
+char	*inttohex(unsigned long n, int nsize)
 {
 	char	*res;
 	int		tempn;
@@ -49,7 +49,13 @@ char	*inttohex(int n, int nsize)
 	return (res);
 }
 
-int	ft_puthexupcase(unsigned int n)
+int	exceptionxu(void)
+{
+	write(1, "0", 1);
+	return (1);
+}
+
+int	ft_puthexupcase(unsigned long n)
 {
 	char	*res;
 	int		nsize;
@@ -57,6 +63,8 @@ int	ft_puthexupcase(unsigned int n)
 	int		len;
 	char	tempchar;
 
+	if (n == 0)
+		return (exceptionxu());
 	nsize = digitos(n);
 	res = inttohex(n, nsize);
 	len = nsize;

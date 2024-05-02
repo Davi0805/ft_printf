@@ -3,36 +3,59 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putpointer.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: davi <davi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: dmelo-ca <dmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 14:38:06 by davi              #+#    #+#             */
-/*   Updated: 2024/05/01 10:48:01 by davi             ###   ########.fr       */
+/*   Updated: 2024/05/02 12:07:31 by dmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./Libft/libft.h"
 #include "ft_printf.h"
 
-int ft_putpointer(void *ptr) {
-	unsigned long address = (unsigned long)ptr;
-	char buffer[20];
-	int numchar;
-	int i = 0;
-	while (address > 0) {
-		int digit = address % 16;
-		if (digit < 10) {
+void	reverseprint(int i, char *buffer)
+{
+	int	j;
+
+	j = i - 1;
+	write(1, "0x", 2);
+	while (j >= 0)
+	{
+		write(1, &buffer[j], 1);
+		j--;
+	}
+}
+
+int	exception(void)
+{
+	write(1, "(nil)", 5);
+	return (5);
+}
+
+int	ft_putpointer(void *ptr)
+{
+	unsigned long	address;
+	char			buffer[20];
+	int				numchar;
+	int				i;
+	int				digit;
+
+	i = 0;
+	address = (unsigned long)ptr;
+	if (address == 0)
+		return (exception());
+	while (address > 0)
+	{
+		digit = address % 16;
+		if (digit < 10)
 			buffer[i] = digit + '0';
-		} else {
+		else
 			buffer[i] = digit - 10 + 'a';
-		}
 		address /= 16;
 		i++;
 	}
 	numchar = i + 2;
-	write(1, "0x", 2);
-	for (int j = i - 1; j >= 0; j--) {
-		write(1, &buffer[j], 1);
-	}
+	reverseprint(i, buffer);
 	return (numchar);
 }
 

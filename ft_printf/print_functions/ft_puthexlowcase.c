@@ -3,19 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_puthexlowcase.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: davi <davi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: dmelo-ca <dmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 15:26:26 by dmelo-ca          #+#    #+#             */
-/*   Updated: 2024/05/01 15:23:08 by davi             ###   ########.fr       */
+/*   Updated: 2024/05/02 12:09:17 by dmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./Libft/libft.h"
 #include "ft_printf.h"
 
-int	digitosl(int n)
+int	digitosl(unsigned long n)
 {
-
 	int	nsize;
 
 	nsize = 0;
@@ -27,7 +26,7 @@ int	digitosl(int n)
 	return (nsize);
 }
 
-char	*inttohexl(int n, int nsize)
+char	*inttohexl(unsigned long n, int nsize)
 {
 	char	*res;
 	int		tempn;
@@ -50,7 +49,13 @@ char	*inttohexl(int n, int nsize)
 	return (res);
 }
 
-int	ft_puthexlowcase(unsigned int n)
+int	exceptionxl(void)
+{
+	write(1, "0", 1);
+	return (1);
+}
+
+int	ft_puthexlowcase(unsigned long n)
 {
 	char	*result;
 	int		nsize;
@@ -58,6 +63,8 @@ int	ft_puthexlowcase(unsigned int n)
 	int		len;
 	char	tempchar;
 
+	if (n == 0)
+		return (exceptionxl());
 	nsize = digitosl(n);
 	result = inttohexl(n, nsize);
 	len = nsize;
