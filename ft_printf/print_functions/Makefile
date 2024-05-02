@@ -1,4 +1,4 @@
-NAME = ft_printf.a
+NAME = libftprintf.a
 CC = gcc
 LIBFTNAME = libft.a
 LIBFTDIR = ./Libft

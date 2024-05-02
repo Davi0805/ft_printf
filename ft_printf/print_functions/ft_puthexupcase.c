@@ -6,7 +6,7 @@
 /*   By: davi <davi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 15:26:26 by dmelo-ca          #+#    #+#             */
-/*   Updated: 2024/05/01 10:47:47 by davi             ###   ########.fr       */
+/*   Updated: 2024/05/01 15:24:17 by davi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,9 @@ int	ft_puthexupcase(unsigned int n)
 	return (nsize);
 }
 
-// int	main(void)
-// {
-// 	int	n = 64531;
+/* int	main(void)
+{
+	int	n = 64531;
 
-// 	ft_puthexupcase(n);
-// }
+	ft_puthexupcase(n);
+}*/

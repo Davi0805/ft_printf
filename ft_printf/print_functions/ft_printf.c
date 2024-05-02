@@ -6,7 +6,7 @@
 /*   By: davi <davi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 10:17:34 by davi              #+#    #+#             */
-/*   Updated: 2024/05/01 10:47:20 by davi             ###   ########.fr       */
+/*   Updated: 2024/05/01 15:27:49 by davi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,21 +75,24 @@ int	ft_printf(const char *format, ...)
 	return (numchar);
 }
 
-// int	main(void)
+/*// int	main(void)
 // {
 // 	char letra;
-// 	char *nome = (char *)malloc(sizeof(char) * 5);
+// 	char nome[20];
 // 	int	idade;
 // 	int ano;
-
-// 	nome = "Davi";
+// 	nome[0] = 'D';
+// 	nome[1] = 'a';
+// 	nome[2] = 'v';
+// 	nome[3] = 'i';
+// 	nome[4] = '\0';
 // 	idade = 20;
 // 	ano = 2004;
 // 	letra = 'D';
-// 	//ft_putpointer(nome);
-// 	//ft_printf("%X", ano);
+// //ft_putpointer(nome);
+// //ft_printf("%X", ano);
 // 	ft_printf("Eu sou %s.\nTenho %i anos.\nA primeira letra do meu nome e %c.\nO endereco do meu nome e %p.\nO ano do meu nascimento em hexadecimal e (%x|%X).\nQuando existir duas porcentagens seguidas deve printar %%\n", nome, idade, letra, nome, ano, ano);
-// 	//printf("Ola, eu sou %s. Tenho %i anos. A primeira letra do meu nome e %c. O endereco do meu nome e %p. O ano do meu nascimento em hexadecimal e (%x|%X)\n", nome, idade, letra, nome, ano, ano);
+// 	printf("Ola, eu sou %s. Tenho %i anos. A primeira letra do meu nome e %c. O endereco do meu nome e %p. O ano do meu nascimento em hexadecimal e (%x|%X)\n", nome, idade, letra, nome, ano, ano);
 
 // 	return 0;
-// }
+// }*/

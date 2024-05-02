@@ -6,13 +6,12 @@
 /*   By: davi <davi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 15:26:26 by dmelo-ca          #+#    #+#             */
-/*   Updated: 2024/05/01 10:47:43 by davi             ###   ########.fr       */
+/*   Updated: 2024/05/01 15:23:08 by davi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./Libft/libft.h"
 #include "ft_printf.h"
-#include <stdio.h>
 
 int	digitosl(int n)
 {
