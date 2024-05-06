@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_puthexupcase.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmelo-ca <dmelo-ca@student.42.fr>          +#+  +:+       +#+        */
+/*   By: davi <davi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 15:26:26 by dmelo-ca          #+#    #+#             */
-/*   Updated: 2024/05/02 12:52:58 by dmelo-ca         ###   ########.fr       */
+/*   Updated: 2024/05/06 10:58:34 by davi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,15 +68,12 @@ int	ft_puthexupcase(unsigned long n)
 	nsize = digitos(n);
 	res = inttohex(n, nsize);
 	len = nsize;
-	i = 0;
-	while (i < len / 2)
+	i = nsize - 1;
+	while (i >= 0)
 	{
-		tempchar = res[i];
-		res[i] = res[len - i - 1];
-		res[len - i - 1] = tempchar;
-		i++;
+		write(1, &res[i], 1);
+		i--;
 	}
-	ft_putstr(res);
 	free(res);
 	return (nsize);
 }

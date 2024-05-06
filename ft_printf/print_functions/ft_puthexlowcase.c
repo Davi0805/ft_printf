@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_puthexlowcase.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmelo-ca <dmelo-ca@student.42.fr>          +#+  +:+       +#+        */
+/*   By: davi <davi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 15:26:26 by dmelo-ca          #+#    #+#             */
-/*   Updated: 2024/05/02 12:09:17 by dmelo-ca         ###   ########.fr       */
+/*   Updated: 2024/05/06 10:54:43 by davi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,23 +60,18 @@ int	ft_puthexlowcase(unsigned long n)
 	char	*result;
 	int		nsize;
 	int		i;
-	int		len;
 	char	tempchar;
 
 	if (n == 0)
 		return (exceptionxl());
 	nsize = digitosl(n);
 	result = inttohexl(n, nsize);
-	len = nsize;
-	i = 0;
-	while (i < len / 2)
+	i = nsize - 1;
+	while (i >= 0)
 	{
-		tempchar = result[i];
-		result[i] = result[len - i - 1];
-		result[len - i - 1] = tempchar;
-		i++;
+		write(1, &result[i], 1);
+		i--;
 	}
-	ft_putstr(result);
 	free(result);
 	return (nsize);
 }
