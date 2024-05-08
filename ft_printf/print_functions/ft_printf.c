@@ -6,7 +6,7 @@
 /*   By: dmelo-ca <dmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 10:17:34 by davi              #+#    #+#             */
-/*   Updated: 2024/05/02 12:12:41 by dmelo-ca         ###   ########.fr       */
+/*   Updated: 2024/05/07 14:49:47 by dmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ int	ft_printf(const char *format, ...)
 	int		numchar;
 	int		i;
 
+	numchar = 0;
 	i = 0;
 	va_start(ap, format);
 	while (format[i])
